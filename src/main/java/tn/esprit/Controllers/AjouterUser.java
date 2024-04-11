@@ -21,6 +21,8 @@ public class AjouterUser {
     private TextField tfDateNaissance;
     @FXML
     private TextField tfNumTel;
+    @FXML
+    private TextField tfNumTel1;
 
 
 
