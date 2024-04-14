@@ -31,19 +31,19 @@ public class ServiceUser implements IService<User> {
             pstm.setString(3, user.getEmail());
             pstm.setInt(4, user.getNum_tel());
             pstm.setString(5, user.getPassword());
-            //pstm.setInt(6, user.getIs_active());
-            //pstm.setString(7, user.getMatricule());
+            pstm.setInt(6, user.getIs_active());
+            pstm.setString(7, user.getMatricule());
 
 
             pstm.setDate(8 ,  user.getDate_naissance());
-            //pstm.setString(9, user.getVerification_token());
-            //pstm.setInt(10, user.getIsemailverified());
-            //pstm.setString(11, user.getResetpasswordcode());
-            //pstm.setString(12, user.getRole());
-            //pstm.setInt(13, user.getIsconnected());
-            //pstm.setString(14, user.getBio());
-            //pstm.setString(15, user.getProfile());
-            //pstm.setString(16, user.getImageprofile());
+            pstm.setString(9, user.getVerification_token());
+            pstm.setInt(10, user.getIsemailverified());
+            pstm.setString(11, user.getResetpasswordcode());
+            pstm.setString(12, user.getRole());
+            pstm.setInt(13, user.getIsconnected());
+            pstm.setString(14, user.getBio());
+            pstm.setString(15, user.getProfile());
+            pstm.setString(16, user.getImageprofile());
 
 
 
