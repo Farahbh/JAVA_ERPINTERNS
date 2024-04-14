@@ -1,7 +1,9 @@
 package tn.esprit.models;
 
 
-import java.sql.Date;
+import javafx.scene.control.DatePicker;
+
+import java.time.LocalDate;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -11,14 +13,14 @@ public class User {
     private String firstname , lastname,email,password,matricule, verification_token,resetpasswordcode, role,bio,profile,imageprofile;
 
      private int num_tel,is_active,isconnected,isemailverified;
-     private Date date_naissance;
+     private LocalDate date_naissance;
 
 
 
 
     public User(String firstname, String lastname, String email, String password,
                 String matricule, String verification_token, String role, String bio, String profile,
-                String imageprofile, String resetpasswordcode, int num_tel, int is_active, int isemailverified , int isconnected, Date date_naissance)
+                String imageprofile, String resetpasswordcode, int num_tel, int is_active, int isemailverified , int isconnected, DatePicker date_naissance)
             throws IllegalArgumentException {
         {
             if (firstname == null || firstname.isEmpty()) {
@@ -54,18 +56,18 @@ public class User {
             this.lastname = lastname;
             this.email = email;
             this.password = password;
-            //this.matricule = matricule;
-            //this.verification_token = verification_token;
-            //this.role = role;
-            //this.bio = bio;
-            //this.profile = profile;
-            //this.imageprofile = imageprofile;
-            //this.resetpasswordcode = resetpasswordcode;
+            this.matricule = matricule;
+            this.verification_token = verification_token;
+            this.role = role;
+            this.bio = bio;
+            this.profile = profile;
+            this.imageprofile = imageprofile;
+            this.resetpasswordcode = resetpasswordcode;
             this.num_tel = num_tel;
-            //this.is_active = is_active;
-            //this.isemailverified = isemailverified;
-            //this.isconnected = isconnected;
-            this.date_naissance = date_naissance;
+            this.is_active = is_active;
+            this.isemailverified = isemailverified;
+            this.isconnected = isconnected;
+            this.date_naissance = date_naissance.getValue();
         }
     }
 
@@ -80,7 +82,7 @@ public class User {
 
     }
 
-    public Date getDate_naissance() {
+    public LocalDate getDate_naissance() {
         return this.date_naissance;
     }
 
@@ -93,14 +95,14 @@ public class User {
     }
 
 
-    /*public int getIsconnected() {
+    public int getIsconnected() {
         return isconnected;
     }
 
     public void setIsconnected(int isconnected) {
         this.isconnected = isconnected;
     }
-    */
+
 
     public String getFirstname() {
         return firstname;
@@ -118,7 +120,7 @@ public class User {
         return password;
     }
 
-    /*public String getMatricule() {
+    public String getMatricule() {
         return matricule;
     }
 
@@ -145,19 +147,19 @@ public class User {
     public String getResetpasswordcode() {
         return resetpasswordcode;
     }
-    */
+
     public int getNum_tel() {
         return num_tel;
     }
 
-    /*public int getIs_active() {
+    public int getIs_active() {
         return is_active;
     }
 
     public int getIsemailverified() {
         return isemailverified;
     }
-    */
+
 
     public void setId(int id) {
         this.id = id;
@@ -181,7 +183,7 @@ public class User {
         this.password = password;
     }
 
-    /*public void setMatricule(String matricule) {
+    public void setMatricule(String matricule) {
         this.matricule = matricule;
     }
 
@@ -215,7 +217,7 @@ public class User {
     public void setIsemailverified(int isemailverified) {
         this.isemailverified = isemailverified;
     }
-   */
+
     public void setNum_tel(int num_tel) {
         this.num_tel = num_tel;
     }
@@ -246,8 +248,8 @@ public class User {
     }
 
 
-    public void setDate_naissance(Date dateNaissance) {
-        this.date_naissance = dateNaissance;
+    public void setDate_naissance(LocalDate date_naissance) {
+        this.date_naissance = date_naissance;
     }
 }
 

@@ -12,7 +12,8 @@ public class AfficherUser implements Initializable {
     @FXML
     private Label lbUser;
 
-    public void setLbUser(String lbUsers) {
+    public void setLbUser(String lbUsers)
+    {
         this.lbUser.setText(lbUsers);
     }
 

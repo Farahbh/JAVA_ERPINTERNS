@@ -19,7 +19,7 @@ public class ServiceUser implements IService<User> {
     }
     @Override
     public void add(User user) {
-        TextField date_naissance = new TextField();
+
         //1-req sql INSERT
         //2-executer req
         String qry="INSERT INTO `User`(`firstname`, `lastname`, `email`, `num_tel`, `password`, `is_active`, `matricule`,`date_naissance`,`verification_token`, `isemailverified`, `resetpasswordcode`, `role`, `isconnected`, `bio`, `profile`, `imageprofile`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
@@ -35,7 +35,7 @@ public class ServiceUser implements IService<User> {
             pstm.setString(7, user.getMatricule());
 
 
-            pstm.setDate(8 ,  user.getDate_naissance());
+            pstm.setDate(8 ,java.sql.Date.valueOf(user.getDate_naissance())  );
             pstm.setString(9, user.getVerification_token());
             pstm.setInt(10, user.getIsemailverified());
             pstm.setString(11, user.getResetpasswordcode());
@@ -78,17 +78,17 @@ public class ServiceUser implements IService<User> {
                 u.setLastname(rs.getString("lastname"));
                 u.setEmail(rs.getString("email"));
                 u.setPassword(rs.getString("password"));
-                //u.setMatricule(rs.getString("matricule"));
-                //u.setVerification_token(rs.getString("verification_token"));
-                //u.setRole(rs.getString("role"));
-                //u.setBio(rs.getString("bio"));
-                //u.setProfile(rs.getString("profile"));
-                //u.setImageprofile(rs.getString("imageprofile"));
-                //u.setResetpasswordcode(rs.getString("resetpasswordcode"));
+                u.setMatricule(rs.getString("matricule"));
+                u.setVerification_token(rs.getString("verification_token"));
+                u.setRole(rs.getString("role"));
+                u.setBio(rs.getString("bio"));
+                u.setProfile(rs.getString("profile"));
+                u.setImageprofile(rs.getString("imageprofile"));
+                u.setResetpasswordcode(rs.getString("resetpasswordcode"));
                 u.setNum_tel(rs.getInt("num_tel"));
-                //u.setIs_active(rs.getInt("is_active"));
-                //u.setIsemailverified(rs.getInt("isemailverified"));
-                //u.setIsconnected(rs.getInt("isconnected"));
+                u.setIs_active(rs.getInt("is_active"));
+                u.setIsemailverified(rs.getInt("isemailverified"));
+                u.setIsconnected(rs.getInt("isconnected"));
 
 
 
