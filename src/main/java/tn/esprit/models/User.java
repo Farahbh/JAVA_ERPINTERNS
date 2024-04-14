@@ -33,22 +33,14 @@ public class User {
             if (password == null || password.isEmpty()) {
                 throw new IllegalArgumentException("Le mot de passe ne peut pas être vide.");
             }
-            if (matricule == null || matricule.isEmpty()) {
-                throw new IllegalArgumentException("Le matricule ne peut pas être vide.");
-            }
-            if (verification_token == null || verification_token.isEmpty()) {
-                throw new IllegalArgumentException("Le jeton de vérification ne peut pas être vide.");
-            }
-            if (role == null || role.isEmpty()) {
-                throw new IllegalArgumentException("Le rôle ne peut pas être vide.");
-            }
+
+
+
 
             if (password.length() < 8) {
                 throw new IllegalArgumentException("Le mot de passe doit avoir au moins 8 caractères.");
             }
-            if (matricule.length() != 10) {
-                throw new IllegalArgumentException("Le matricule doit avoir exactement 10 caractères.");
-            }
+
             if (firstname.length() >10) {
                 throw new IllegalArgumentException("Le nom  doit avoir au plus 10 caractères.");
             }
@@ -62,17 +54,17 @@ public class User {
             this.lastname = lastname;
             this.email = email;
             this.password = password;
-            this.matricule = matricule;
-            this.verification_token = verification_token;
-            this.role = role;
-            this.bio = bio;
-            this.profile = profile;
-            this.imageprofile = imageprofile;
-            this.resetpasswordcode = resetpasswordcode;
+            //this.matricule = matricule;
+            //this.verification_token = verification_token;
+            //this.role = role;
+            //this.bio = bio;
+            //this.profile = profile;
+            //this.imageprofile = imageprofile;
+            //this.resetpasswordcode = resetpasswordcode;
             this.num_tel = num_tel;
-            this.is_active = is_active;
-            this.isemailverified = isemailverified;
-            this.isconnected = isconnected;
+            //this.is_active = is_active;
+            //this.isemailverified = isemailverified;
+            //this.isconnected = isconnected;
             this.date_naissance = date_naissance;
         }
     }
@@ -89,7 +81,7 @@ public class User {
     }
 
     public Date getDate_naissance() {
-        return date_naissance;
+        return this.date_naissance;
     }
 
 
@@ -101,13 +93,14 @@ public class User {
     }
 
 
-    public int getIsconnected() {
+    /*public int getIsconnected() {
         return isconnected;
     }
 
     public void setIsconnected(int isconnected) {
         this.isconnected = isconnected;
     }
+    */
 
     public String getFirstname() {
         return firstname;
@@ -125,7 +118,7 @@ public class User {
         return password;
     }
 
-    public String getMatricule() {
+    /*public String getMatricule() {
         return matricule;
     }
 
@@ -152,18 +145,19 @@ public class User {
     public String getResetpasswordcode() {
         return resetpasswordcode;
     }
-
+    */
     public int getNum_tel() {
         return num_tel;
     }
 
-    public int getIs_active() {
+    /*public int getIs_active() {
         return is_active;
     }
 
     public int getIsemailverified() {
         return isemailverified;
     }
+    */
 
     public void setId(int id) {
         this.id = id;
@@ -187,7 +181,7 @@ public class User {
         this.password = password;
     }
 
-    public void setMatricule(String matricule) {
+    /*public void setMatricule(String matricule) {
         this.matricule = matricule;
     }
 
@@ -214,11 +208,6 @@ public class User {
     public void setResetpasswordcode(String resetpasswordcode) {
         this.resetpasswordcode = resetpasswordcode;
     }
-
-    public void setNum_tel(int num_tel) {
-        this.num_tel = num_tel;
-    }
-
     public void setIs_active(int is_active) {
         this.is_active = is_active;
     }
@@ -226,6 +215,12 @@ public class User {
     public void setIsemailverified(int isemailverified) {
         this.isemailverified = isemailverified;
     }
+   */
+    public void setNum_tel(int num_tel) {
+        this.num_tel = num_tel;
+    }
+
+
 
     @Override
     public String toString() {
@@ -248,6 +243,11 @@ public class User {
                 ", isemailverified=" + isemailverified +
                 ", date_naissance=" + date_naissance +
                 '}';
+    }
+
+
+    public void setDate_naissance(Date dateNaissance) {
+        this.date_naissance = dateNaissance;
     }
 }
 

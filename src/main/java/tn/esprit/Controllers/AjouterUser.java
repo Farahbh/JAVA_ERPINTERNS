@@ -6,8 +6,10 @@ import javafx.scene.control.TextField;
 import tn.esprit.models.User;
 import tn.esprit.services.ServiceUser;
 
+import java.sql.Date;
+
 public class AjouterUser {
-    ServiceUser sp  = new ServiceUser();
+    ServiceUser su  = new ServiceUser();
     @FXML
     private TextField tfFirstname;
 
@@ -18,16 +20,15 @@ public class AjouterUser {
     @FXML
     private TextField tfPassword;
     @FXML
-    private TextField tfDateNaissance;
+    private TextField date_naissance;
     @FXML
     private TextField tfNumTel;
+
+
+
+
     @FXML
-    private TextField tfNumTel1;
-
-
-
-    @FXML
-    void ajouterPersonne(ActionEvent event) {
+    void ajouterUser(ActionEvent event) {
 
         User u = new User();
 
@@ -35,13 +36,24 @@ public class AjouterUser {
         u.setLastname(tfLastname.getText());
         u.setEmail(tfEmail.getText());
         u.setPassword(tfPassword.getText());
-        u.getDate_naissance();
+
+
+
+
+        Date dateNaissance = Date.valueOf(date_naissance.getText());
+        u.setDate_naissance(dateNaissance);
+
+
+
         u.setNum_tel(Integer.parseInt(tfNumTel.getText()));
 
 
-        sp.add(u);
+        su.add(u);
 
     }
 
+
+    public void afficheruser(ActionEvent actionEvent) {
+    }
 }
 
