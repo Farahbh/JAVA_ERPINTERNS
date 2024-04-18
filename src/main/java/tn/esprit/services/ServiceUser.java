@@ -60,7 +60,7 @@ public class ServiceUser implements IService<User> {
     }
 
     @Override
-    public ArrayList<User> getAll() {
+    public  ArrayList<User> getAll() {
         //1-req SELECT
         //2-recuperation de la base de donné remplissage dans Array
         //3-retour du tableau done

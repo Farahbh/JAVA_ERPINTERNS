@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="tn.esprit.Controllers.AfficherUser"
-            prefHeight="400.0" prefWidth="600.0">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.Controllers.AfficherUser">
     <children>
-        <Label fx:id="lbUser" layoutX="77.0" layoutY="44.0" prefHeight="330.0" prefWidth="414.0" text="Label" />
+        <VBox fx:id="cardContainer" layoutX="20.0" layoutY="20.0" spacing="10.0">
+
+        </VBox>
     </children>
 
 
