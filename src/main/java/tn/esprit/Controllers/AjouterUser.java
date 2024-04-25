@@ -3,6 +3,7 @@ package tn.esprit.Controllers;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -11,6 +12,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import org.w3c.dom.Text;
 import tn.esprit.models.User;
 import tn.esprit.services.ServiceUser;
 
@@ -59,66 +61,54 @@ public class AjouterUser {
 
 
     @FXML
-    void ajouterUser(ActionEvent event) {
+    public void AjouterUser(ActionEvent event) {
+            User u = new User();
 
-        User u = new User();
+            u.setFirstname(tfFirstname.getText());
+            u.setLastname(tfLastname.getText());
+            u.setEmail(tfEmail.getText());
+            u.setNum_tel(Integer.parseInt(tfNumTel.getText()));
 
-        u.setFirstname(tfFirstname.getText());
-        u.setLastname(tfLastname.getText());
-        u.setEmail(tfEmail.getText());
-        u.setNum_tel(Integer.parseInt(tfNumTel.getText()));
-
-        u.setPassword(tfPassword.getText());
-        //Date dateNaissance = Date.valueOf(date_naissance.getText());
-        u.setDate_naissance(date_naissance.getValue());
-        u.setMatricule(tfMatricule.getText());
-        u.setBio(tfbio.getText());
-        u.setIs_active(Integer.parseInt(tfisactive.getText()));
-        u.setIsconnected(Integer.parseInt(tfisconnected.getText()));
-        u.setIsemailverified(Integer.parseInt(tfisemailverified.getText()));
-        u.setResetpasswordcode(tfresetpasswordcode.getText());
-        u.setRole(tfrole.getText());
-        u.setImageprofile(tfImageprofil.getText());
-        u.setVerification_token(tfVérificationtoken.getText());
-        u.setProfile(tfProfil.getText());
-
-
-        su.add(u);
-
-        tfFirstname.clear();
-        tfLastname.clear();
-        tfNumTel.clear();
-        tfbio.clear();
-        tfPassword.clear();
-        tfEmail.clear();
-        tfisactive.clear();
-        tfisconnected.clear();
-        tfisemailverified.clear();
-        tfMatricule.clear();
-        tfVérificationtoken.clear();
-        tfrole.clear();
-        tfProfil.clear();
-        tfresetpasswordcode.clear();
-        tfisactive.clear();
-        tfImageprofil.clear();
+            u.setPassword(tfPassword.getText());
+            //Date dateNaissance = Date.valueOf(date_naissance.getText());
+            u.setDate_naissance(date_naissance.getValue());
+            u.setMatricule(tfMatricule.getText());
+            u.setBio(tfbio.getText());
+            u.setIs_active(Integer.parseInt(tfisactive.getText()));
+            u.setIsconnected(Integer.parseInt(tfisconnected.getText()));
+            u.setIsemailverified(Integer.parseInt(tfisemailverified.getText()));
+            u.setResetpasswordcode(tfresetpasswordcode.getText());
+            u.setRole(tfrole.getText());
+            u.setImageprofile(tfImageprofil.getText());
+            u.setVerification_token(tfVérificationtoken.getText());
+            u.setProfile(tfProfil.getText());
 
 
-    }
+            su.add(u);
 
-    /* @FXML
-    void afficherUser(ActionEvent event) throws IOException {
-        // Load the AfficherUser.fxml view
-        Parent root = FXMLLoader.load(getClass().getResource("/AfficherUser.fxml"));
+            tfFirstname.clear();
+            tfLastname.clear();
+            tfNumTel.clear();
+            tfbio.clear();
+            tfPassword.clear();
+            tfEmail.clear();
+            tfisactive.clear();
+            tfisconnected.clear();
+            tfisemailverified.clear();
+            tfMatricule.clear();
+            tfVérificationtoken.clear();
+            tfrole.clear();
+            tfProfil.clear();
+            tfresetpasswordcode.clear();
+            tfisactive.clear();
+            tfImageprofil.clear();
 
-        // Get the current stage from the button's scene
-        Stage stage = (Stage) afficher.getScene().getWindow();
-        stage.setScene(new Scene(root));
-        stage.show();
-    }
-    */
+
+        }
+
 
    @FXML
-    void afficherUser(ActionEvent event) throws IOException {
+    void AfficherUser(ActionEvent event) throws IOException {
         try {
             // Chargez la vue AfficherUser.fxml
             Parent root = FXMLLoader.load(getClass().getResource("/AfficherUser.fxml"));
@@ -158,6 +148,8 @@ public class AjouterUser {
                 VBox card = new VBox();
 
                 card.getStyleClass().add("user-card");
+                card.setUserData(user.getId());
+
                 Label firstNameLabel = new Label("Firstname: " + user.getFirstname());
                 Label lastNameLabel = new Label("Lastname: " + user.getLastname());
                 Label emailLabel = new Label("Email: " + user.getEmail());
@@ -181,4 +173,8 @@ public class AjouterUser {
                 return card;
             }
 
-        }
+
+
+}
+
+

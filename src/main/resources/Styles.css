@@ -1,0 +1,15 @@
+.profil-layout{
+    -fx-background-color: EBC95E;
+    -fx-background-radius: 50 50 50 50 ;
+}
+
+.white-background{
+    -fx-background-color: #fff ;
+}
+
+.root {
+    /* Set background image */
+    -fx-background-image: url("bg.png");
+    /* Scale background image to cover the entire window */
+    -fx-background-size: cover;
+}

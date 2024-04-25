@@ -5,9 +5,27 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.Controllers.AfficherUser">
     <children>
-        <VBox fx:id="cardContainer" layoutX="20.0" layoutY="20.0" spacing="10.0">
+        <GridPane fx:id="gridPane" alignment="CENTER" hgap="20" vgap="20"/>
 
-        </VBox>
+
+        <Label  text="Firstname"/>
+        <Label  text="Lastname"/>
+        <Label  text="Email"/>
+        <Label text="Numéro de&#10;téléphone "/>
+        <Label text="Password"/>
+        <Label  text="Is_active"/>
+        <Label  text="Matricule"/>
+        <Label  text="Vérification&#10;token"/>
+        <Label  text="Date de naissance"/>
+        <Label  text="Isemailverified"/>
+        <Label  text="Restpasswordcode"/>
+        <Label  text="Role"/>
+        <Label  text="IsConnected"/>
+        <Label text="Bio"/>
+        <Label  text="Profil"/>
+        <Label  text="ImageProfil"/>
+
+
     </children>
 
 

@@ -1,50 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.Controllers.AjouterUser">
-
- <children>
-    <TextField fx:id="tfFirstname" layoutX="178.0" layoutY="45.0"/>
-    <TextField fx:id="tfLastname" layoutX="178.0" layoutY="90.0"/>
-    <TextField fx:id="tfEmail" layoutX="178.0" layoutY="135.0"/>
-    <TextField fx:id="tfNumTel" layoutX="178.0" layoutY="180.0"/>
-    <TextField fx:id="tfPassword" layoutX="178.0" layoutY="225.0"/>
-    <TextField fx:id="tfisactive" layoutX="178.0" layoutY="270.0"/>
-    <TextField fx:id="tfMatricule" layoutX="178.0" layoutY="315.0"/>
-    <TextField fx:id="tfVérificationtoken" layoutX="178.0" layoutY="360.0"/>
-    <DatePicker fx:id="date_naissance" layoutX="178.0" layoutY="405.0"/>
-    <TextField fx:id="tfisemailverified" layoutX="178.0" layoutY="450.0"/>
-    <TextField fx:id="tfresetpasswordcode" layoutX="178.0" layoutY="495.0"/>
-    <TextField fx:id="tfrole" layoutX="178.0" layoutY="540.0"/>
-    <TextField fx:id="tfisconnected" layoutX="178.0" layoutY="585.0"/>
-    <TextField fx:id="tfbio" layoutX="178.0" layoutY="630.0"/>
-    <TextField fx:id="tfProfil" layoutX="178.0" layoutY="675.0"/>
-    <TextField fx:id="tfImageprofil" layoutX="178.0" layoutY="720.0"/>
-    <Label layoutX="74.0" layoutY="45.0" text="Firstname"/>
-    <Label layoutX="74.0" layoutY="90.0" text="Lastname"/>
-    <Label layoutX="74.0" layoutY="135.0" text="Email"/>
-    <Label layoutX="74.0" layoutY="180.0" text="Numéro de&#10;téléphone "/>
-    <Label layoutX="74.0" layoutY="225.0" text="Password"/>
-    <Label layoutX="74.0" layoutY="270.0" text="Is_active"/>
-    <Label layoutX="74.0" layoutY="315.0" text="Matricule"/>
-    <Label layoutX="74.0" layoutY="360.0" text="Vérification&#10;token"/>
-    <Label layoutX="74.0" layoutY="405.0" text="Date de naissance"/>
-    <Label layoutX="74.0" layoutY="450.0" text="Isemailverified"/>
-    <Label layoutX="74.0" layoutY="495.0" text="Restpasswordcode"/>
-    <Label layoutX="74.0" layoutY="540.0" text="Role"/>
-    <Label layoutX="74.0" layoutY="585.0" text="IsConnected"/>
-    <Label layoutX="74.0" layoutY="630.0" text="Bio"/>
-    <Label layoutX="74.0" layoutY="675.0" text="Profil"/>
-    <Label layoutX="74.0" layoutY="720.0" text="ImageProfil"/>
-
-    <Button layoutX="506.0" layoutY="316.0" mnemonicParsing="false" onAction="#ajouterUser" text="Ajouter"/>
-
-    <Button fx:id="afficher" layoutX="409.0" layoutY="316.0" mnemonicParsing="false" onAction="#afficherUser"
-            text="Afficher"/>
- </children>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="599.0" prefWidth="809.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.Controllers.AjouterUser">
+   <children>
+      <TextField id="tfFirstname" layoutX="187.0" layoutY="71.0" />
+      <TextField id="tfLastname" layoutX="187.0" layoutY="118.0" />
+      <TextField id="tfEmail" layoutX="187.0" layoutY="167.0" />
+      <TextField id="tfnumtel" layoutX="187.0" layoutY="213.0" />
+      <TextField id="tfPassword" layoutX="187.0" layoutY="255.0" />
+      <TextField id="tfisactive" layoutX="187.0" layoutY="299.0" />
+      <TitledPane alignment="TOP_CENTER" prefHeight="42.0" prefWidth="809.0" text=" Ajouter un utilisateur ">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TitledPane>
+      <Label layoutX="83.0" layoutY="75.0" text="Fistname" />
+      <Label layoutX="83.0" layoutY="122.0" text="Lastname" />
+      <Label layoutX="83.0" layoutY="171.0" prefHeight="18.0" prefWidth="36.0" text="Email" />
+      <Label layoutX="52.0" layoutY="217.0" text="Numéro de téléphone" />
+      <Label layoutX="76.0" layoutY="259.0" text="Password" />
+      <Label layoutX="79.0" layoutY="303.0" text="Is-active" />
+      <Button layoutX="615.0" layoutY="521.0" mnemonicParsing="false" onAction="#AjouterUser" text="Ajouter" />
+      <Button layoutX="523.0" layoutY="521.0" mnemonicParsing="false" onAction="#AfficherUser" text="Afficher" />
+      <TextField id="tfrole" layoutX="465.0" layoutY="71.0" />
+      <TextField id="tfbio" layoutX="465.0" layoutY="158.0" />
+      <TextField id="tfisconnected" layoutX="465.0" layoutY="118.0" />
+      <TextField id=" tfProfil " layoutX="465.0" layoutY="204.0" />
+      <TextField id="tfImageprofil" layoutX="465.0" layoutY="255.0" />
+      <TextField id="tfresetpasswordcode" layoutX="187.0" layoutY="521.0" />
+      <TextField id="tfisemailverified" layoutX="187.0" layoutY="483.0" />
+      <TextField id="tfVérificationtoken" layoutX="187.0" layoutY="394.0" />
+      <TextField id="tfMatricule" layoutX="187.0" layoutY="350.0" />
+      <Label layoutX="83.0" layoutY="487.0" text="Isemailverified" />
+      <Label layoutX="76.0" layoutY="354.0" text="Matricule" />
+      <Label layoutX="68.0" layoutY="525.0" text="Resetpasswordcode" />
+      <Label layoutX="70.0" layoutY="443.0" text="Date de Naissance " />
+      <Label layoutX="72.0" layoutY="398.0" text="Vérification token" />
+      <Label layoutX="391.0" layoutY="259.0" text="ImageProfil" />
+      <Label layoutX="404.0" layoutY="208.0" text="Profil" />
+      <Label layoutX="404.0" layoutY="162.0" text="Bio" />
+      <Label layoutX="385.0" layoutY="122.0" text="IsConnected" />
+      <Label layoutX="404.0" layoutY="75.0" text="Role" />
+      <DatePicker id="date_naissance" layoutX="187.0" layoutY="439.0" />
+     
+   </children>
 </AnchorPane>
