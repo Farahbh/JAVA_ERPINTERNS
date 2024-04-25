@@ -16,7 +16,7 @@
          <children>
             <ImageView fitHeight="51.0" fitWidth="97.0" layoutX="20.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../Desktop/computer-icons-registered-user-login-user-profile-others.jpg" />
+                  <Image url="@../../../image/computer-icons-registered-user-login-user-profile-others.jpg" />
                </image>
             </ImageView>
             <Label layoutX="191.0" text="S'authentifier">
