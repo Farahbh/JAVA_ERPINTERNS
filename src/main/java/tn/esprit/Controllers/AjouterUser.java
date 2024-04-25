@@ -57,7 +57,9 @@ public class AjouterUser {
     @FXML
     private Button afficher;
 
-
+    public AjouterUser(TextField tfNumTel) {
+        this.tfNumTel = tfNumTel;
+    }
 
 
     @FXML
