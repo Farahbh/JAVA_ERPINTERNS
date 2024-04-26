@@ -13,3 +13,16 @@
     /* Scale background image to cover the entire window */
     -fx-background-size: cover;
 }
+
+.card {
+    -fx-background-color: white;
+    -fx-border-color: lightgray;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 10);
+}
+
+.label {
+    -fx-font-size: 14;
+    -fx-text-fill: #333;
+}
