@@ -66,4 +66,10 @@ public class Login {
         }
 
     }
+
+    public void AfficherUser(ActionEvent event) {
+    }
+
+    public void AjouterUser(ActionEvent event) {
+    }
 }
