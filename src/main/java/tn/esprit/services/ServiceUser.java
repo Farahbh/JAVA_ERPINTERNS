@@ -18,6 +18,30 @@ public class ServiceUser implements Iservice<User> {
 
     }
 
+    public User getUserByEmailAndPassword(String email, String password) {
+        User user = null;
+        String query = "SELECT * FROM `User` WHERE email = ? AND password = ?";
+        try (PreparedStatement statement = cnx.prepareStatement(query)) {
+            statement.setString(1, email);
+            statement.setString(2, password);
+            ResultSet resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+                user = new User();
+                user.setId(resultSet.getInt("id"));
+                user.setFirstname(resultSet.getString("firstname"));
+                user.setLastname(resultSet.getString("lastname"));
+                user.setEmail(resultSet.getString("email"));
+                user.setPassword(resultSet.getString("password"));
+                // Remplissez les autres attributs de l'utilisateur selon votre modèle
+            }
+        } catch (SQLException e) {
+            System.out.println("Erreur lors de l'exécution de la requête SQL : " + e.getMessage());
+        }
+        return user;
+    }
+
+
+
     public boolean deleteUser(int id) {
         String query = "DELETE FROM `User` WHERE id = ?";
 

@@ -13,7 +13,7 @@ import tn.esprit.models.User;
 import tn.esprit.services.ServiceUser;
 
 import java.io.IOException;
-import java.sql.SQLException;
+
 import java.util.List;
 
 public class LoginUser {
@@ -49,19 +49,25 @@ public class LoginUser {
 
 
     @FXML
-    void seConnecter(ActionEvent event) {
-
-        // Méthode à exécuter lorsqu'on clique sur le bouton "Se Connecter"
-        String Email = tfEmail.getText();
+    void seConnecter(ActionEvent event)  {
+        String email = tfEmail.getText();
         String password = tfPassword.getText();
-        String role = roleChoiceBox.getValue(); // Obtenir le rôle sélectionné dans le ChoiceBox
 
-        // Écrire ici le code pour vérifier les informations de connexion et effectuer l'authentification
-        // Par exemple, vous pouvez afficher les informations de connexion dans la console pour le moment :
-        System.out.println("Email: " + Email);
-        System.out.println("Password: " + password);
-        System.out.println("Role: " + role);
-
+        // Vérifiez l'authentification
+        ServiceUser serviceUser = new ServiceUser();
+        User user = serviceUser.getUserByEmailAndPassword(email, password);
+        if (user != null) {
+            // Si l'authentification réussit, naviguez vers la page de profil utilisateur
+            try {
+                navigateToProfilUser(user.getEmail());
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        } else {
+            // Affichez un message d'erreur si l'authentification échoue
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Email ou mot de passe incorrect", ButtonType.OK);
+            alert.showAndWait();
+        }
         if (isEmailExist(tfEmail.getText())) {
             // L'email existe, implémentez ici la logique d'authentification
             System.out.println("Email exists");
@@ -70,7 +76,6 @@ public class LoginUser {
             // L'email n'existe pas, afficher un message d'erreur
             showErrorAlert("Adresse inexistante", "L'adresse email n'existe pas dans la base de données.");
         }
-
 
     }
 
@@ -95,6 +100,26 @@ public class LoginUser {
         alert.setHeaderText(null);
         alert.setContentText(message);
         alert.showAndWait();
+    }
+    private void navigateToProfilUser(String Email) throws IOException {
+        // Chargez la page de profil utilisateur
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("ProfilUser.fxml"));
+        Parent profilUserRoot = loader.load();
+
+        // Obtenez la scène actuelle
+        Scene currentScene = tfEmail.getScene();
+
+        // Créez une nouvelle scène pour la page de profil utilisateur
+        Scene profilUserScene = new Scene(profilUserRoot, currentScene.getWidth(), currentScene.getHeight());
+
+        // Obtenez la fenêtre principale
+        Stage primaryStage = (Stage) currentScene.getWindow();
+        primaryStage.setScene(profilUserScene);
+        primaryStage.show();
+
+        // Initialisez le contrôleur de la page de profil utilisateur et passez l'email en paramètre
+        ProfilUser ProfilUser = loader.getController();
+        ProfilUser.initialize(Email);
     }
 
     private void navigateToAfficherUser1() {

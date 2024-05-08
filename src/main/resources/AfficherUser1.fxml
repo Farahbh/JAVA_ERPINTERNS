@@ -10,9 +10,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.controllers.AfficherUser1">
+<AnchorPane layoutX="217.0" layoutY="89.0" prefHeight="400.0" prefWidth="600.0" stylesheets="Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.controllers.AfficherUser1">
     <children>
-        <ScrollPane fitToHeight="true" fitToWidth="false" layoutX="217.0" layoutY="89.0" prefHeight="386.0" prefWidth="598.0">
+        <ScrollPane fitToHeight="true" fitToWidth="false" layoutX="217.0" layoutY="89.0" prefHeight="400.0" prefWidth="600.0">
             <HBox>
                 <VBox>
                     <HBox fx:id="cardContainer" alignment="CENTER" spacing="10.0">
@@ -22,7 +22,7 @@
             </HBox>
 
         </ScrollPane>
-        <AnchorPane layoutX="-5.0" layoutY="-1.0" prefHeight="400.0" prefWidth="223.0">
+        <AnchorPane layoutX="-2.0" prefHeight="400.0" prefWidth="220.0">
             <children>
                 <ImageView fitHeight="145.0" fitWidth="216.0" layoutX="5.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
                     <image>
@@ -42,14 +42,14 @@
                         </Label>
                     </children>
                 </HBox>
-                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
-                    <children>
-                        <Button fx:id="Ajouter" mnemonicParsing="false" onAction="#AjouterUser" text="Ajouter">
-                            <font>
-                                <Font size="14.0" />
-                            </font>
-                        </Button>
-                    </children>
+                <HBox alignment="CENTER" prefHeight="60.0" prefWidth="101.0">
+               <children>
+                  <Button fx:id="Ajouter" mnemonicParsing="false" onAction="#AjouterUser" text="Ajouter">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+               </children>
                 </HBox>
             </children>
         </HBox>

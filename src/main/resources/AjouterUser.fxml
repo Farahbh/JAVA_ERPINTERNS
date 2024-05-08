@@ -40,9 +40,9 @@
         </Button>
         <HBox alignment="CENTER" spacing="10.0" />
         <HBox alignment="CENTER" spacing="10.0" />
-        <TextField fx:id="captchaTextField" layoutX="680.0" layoutY="329.0" prefHeight="31.0" prefWidth="126.0" promptText="Enter Captcha" />
-        <Label layoutX="600.0" layoutY="334.0" prefHeight="21.0" prefWidth="69.0" text="Captcha:" />
-        <Label fx:id="captchaLabel" layoutX="769.0" layoutY="334.0" prefHeight="21.0" prefWidth="61.0" />
+        <TextField fx:id="captchaTextField" layoutX="65.0" layoutY="329.0" prefHeight="31.0" prefWidth="126.0" promptText="Enter Captcha" />
+        <Label layoutX="10.0" layoutY="334.0" prefHeight="21.0" prefWidth="69.0" text="Captcha:" />
+        <Label fx:id="captchaLabel" layoutX="160.0" layoutY="334.0" prefHeight="21.0" prefWidth="61.0" />
         <Button fx:id="seconnecter" layoutX="528.0" layoutY="362.0" mnemonicParsing="false" onAction="#chargerPageConnexion" text="Se connecter">
         </Button>
         <Label layoutX="203.0" layoutY="340.0" text="Role" />

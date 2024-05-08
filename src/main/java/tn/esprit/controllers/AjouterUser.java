@@ -50,11 +50,11 @@ public class AjouterUser {
     public void AjouterUser(ActionEvent event) {
 
         if (tfFirstname == null || tfFirstname.getText().isEmpty()) {
-            showErrorAlert("Erreur de saisie", "Veuillez saisir un nom  valide.");
+            showErrorAlert("Erreur de saisie", "Veuillez saisir un prénom  valide.");
             return;
         }
         if (tfLastname == null || tfLastname.getText().isEmpty()) {
-            showErrorAlert("Erreur de saisie", "Veuillez saisir un prénom valide.");
+            showErrorAlert("Erreur de saisie", "Veuillez saisir un nom valide.");
             return;
         }
 
@@ -74,7 +74,7 @@ public class AjouterUser {
         }
 
         if (!isEmailUnique(tfEmail.getText())) {
-            showErrorAlert("Erreur d'unicité", "Cet email est déjà associé à une réservation.");
+            showErrorAlert("Erreur d'unicité", "Cet email existe déja .");
             return;
         }
         // Ajoutez l'utilisateur

@@ -113,11 +113,11 @@ public class AfficherUser1 {
         ImageProfilLabel.setMaxWidth(300); // Définir une largeur maximale pour le label
         ImageProfilLabel.setWrapText(true); // Permettre le passage à la ligne si nécessaire
 
-        Button modifyButton = new Button("Modifier");
+        /*Button modifyButton = new Button("Modifier");
         modifyButton.setLayoutX(10);
         modifyButton.setLayoutY(330);
         modifyButton.setOnAction(event -> modifierUtilisateur(user));
-
+        */
         Button deleteB = new Button("Supprimer");
         deleteB.setLayoutX(10);
         deleteB.setLayoutY(350);
@@ -126,11 +126,11 @@ public class AfficherUser1 {
 
 
         card.getChildren().addAll(FirstnameLabel, lastnamelabel, emailLabel, NumTelLabel, IsActivaLabel, MatriculeLabel, VérificationtokenLabel, DatedenaissanceLabel,
-                IsemailverifiedLabel, RoleLabel, IsConnectedLabel, BioLabel, ProfilLabel, ImageProfilLabel, deleteB, modifyButton);
+                IsemailverifiedLabel, RoleLabel, IsConnectedLabel, BioLabel, ProfilLabel, ImageProfilLabel, deleteB);
         return card;
     }
 
-    private void modifierUtilisateur(User user) {
+    /*private void modifierUtilisateur(User user) {
         // Créer une nouvelle fenêtre de modification de l'utilisateur
         Stage modificationStage = new Stage();
         modificationStage.setTitle("Modifier Utilisateur");
@@ -164,7 +164,7 @@ public class AfficherUser1 {
         modificationStage.setScene(new Scene(modificationLayout, 400, 300));
         modificationStage.show();
     }
-
+     */
 
     private void display(List<User> users) {
         cardContainer.getChildren().clear();
